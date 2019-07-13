@@ -1,0 +1,16 @@
+title: Masters Basketball Tournaments
+
+url: https://www.mastersbasketballtournaments.com
+baseurl:
+
+#collections:
+#  tournaments:
+#    output: true
+
+timezone: UTC
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - _assets
+

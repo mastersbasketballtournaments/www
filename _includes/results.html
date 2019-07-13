@@ -1,0 +1,92 @@
+<div id="results" class="bg-white">
+	<div class="bg-dark text-white p-3 p-lg-4 text-center divider-arrow divider-arrow-b divider-dark">
+		<div class="container">
+			<hr class="hr-lg mt-0 mb-2 w-10 mx-auto hr-primary" />
+
+			<h2 class="text-center text-uppercase font-weight-bold my-0">
+				Find a Tournament
+			</h2>
+
+			<h5 class="text-center font-weight-light mt-2 mb-0 text-white op-5">
+				Find a tournament from around in the world
+			</h5>
+		</div>
+	</div>
+
+	<div class="container p-4 py-lg-12">
+		<div class="row justify-content-center">
+			<div class="col-lg-12 py-2">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Tournament</th>
+							<th>When</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						{% for tournament in site.data.tournaments %}
+							<tr>
+								<th scope="row">
+									<p><a href="{{ tournament.website }}" target="_blank">{{ tournament.name }}</a></p>
+
+									<p>Contact: <a href="mailto:{{ tournament.email }}">{{ tournament.contact }}</a></p>
+
+									{{ tournament.continent }}<br>
+									{{ tournament.country }}<br>
+									{{ tournament.city }}
+								</th>
+
+								<td>
+									<table class="table">
+										<thead>
+											<th>Year</th>
+											<th>Dates</th>
+											<th>Competitions</th>
+										</thead>
+
+										<tbody>
+											{% assign years = tournament.years %}
+
+											{% for year in years %}
+												<tr>
+													<td>{{ year.year }}</td>
+													<td>
+														{{ year.start | date: "%d %b %Y" }} -
+														{{ year.end | date: "%d %b %Y" }}
+													</td>
+													<td>
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>Gender</th>
+																	<th>Age</th>
+																</tr>
+															</thead>
+
+															<tbody>
+
+																{% assign competitions = year.competitions %}
+
+																{% for competition in competitions %}
+																	<tr>
+																		<td>{{ competition.gender }}</td>
+																		<td>{{ competition.age }}+</td>
+																	</tr>
+																{% endfor %}
+															</tbody>
+														</table>
+													</td>
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
