@@ -20,6 +20,7 @@
 					<thead>
 						<tr>
 							<th>Tournament</th>
+							<th>Location</th>
 							<th>Competitions</th>
 						</tr>
 					</thead>
@@ -28,18 +29,41 @@
 						{% for tournament in site.data.tournaments %}
 							<tr>
 								<th scope="row">
-									<p><a href="{{ tournament.website }}" target="_blank">{{ tournament.name }}</a></p>
-
-									<p>Contact: <a href="mailto:{{ tournament.emailAddress }}">{{ tournament.contact }}</a></p>
+									<h2><a href="{{ tournament.website }}" target="_blank">{{ tournament.name }}</a></h2>
 
 									<p>When: {{ tournament.dateStart }} - {{ tournament.dateEnd }}</p>
 
-									Location: {{ tournament.location }}<br>
-									Country: {{ tournament.country }}<br>
-									Continent: {{ tournament.continent }}<br>
+									<p>Contact: <a href="mailto:{{ tournament.emailAddress }}">{{ tournament.contact }}</a></p>
+
+									<div class="nav nav-icons header-block order-12">
+										{% if tournament.twitter %}
+											<a href="{{ tournament.twitter }}" class="nav-link" target="_blank"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span></a>
+										{% endif %}
+
+										{% if tournament.facebook %}
+											<a href="{{ tournament.facebook }}" class="nav-link" target="_blank"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span></a>
+										{% endif %}
+
+										{% if tournament.instagram %}
+											<a href="{{ tournament.instagram }}" class="nav-link" target="_blank"> <i class="fab fa-instagram icon-1x"></i> <span class="sr-only">Instagram</span></a>
+										{% endif %}
+									</div>
 								</th>
 
 								<td>
+									City: {{ tournament.location }}<br>
+									Country: {{ tournament.country }}<br>
+									Continent: {{ tournament.continent }}<br>
+								</td>
+
+								<td>
+									{% for competition in tournament.competitions %}
+										<p>{{ competition.gender }} aged
+										{{ competition.ageover }} and over ({{ competition.code }})</p>
+									{% endfor %}
+
+
+									{% comment %}
 									<table class="table">
 										<thead>
 											<th>Year</th>
@@ -83,6 +107,8 @@
 											{% endfor %}
 										</tbody>
 									</table>
+									{% endcomment %}
+
 								</td>
 							</tr>
 						{% endfor %}
