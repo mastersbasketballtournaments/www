@@ -3,6 +3,8 @@ title: Masters Basketball Tournaments
 url: https://www.mastersbasketballtournaments.com
 baseurl:
 
+environment: production
+
 #collections:
 #  tournaments:
 #    output: true
