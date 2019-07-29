@@ -1,0 +1,235 @@
+<div class="container mt-5">
+	<form name="suggestion" action="/tournament-suggestion/thank-you/" method="POST" netlify>
+		<div class="card">
+			<div class="card-header card-primary">
+				<h3 class="card-title text-white">Suggest a Tournament</h3>
+			</div>
+
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="name">Name *</label>
+
+							<input id="name" name="name" type="text" value="" class="form-control" maxlength="255" autofocus required>
+						</div>
+
+						<div class="form-group">
+							<label for="contact">Contact name</label>
+
+							<input id="contact" name="contact" type="text" value="" class="form-control" maxlength="255">
+						</div>
+
+						<div class="form-group">
+							<label for="emailAddress">Email address</label>
+
+							<input id="emailAddress" name="emailAddress" type="email" value="" class="form-control" maxlength="255">
+						</div>
+
+						<div class="form-group">
+							<label for="website">Website *</label>
+
+							<input id="website" name="website" type="text" value="" class="form-control" maxlength="255" required>
+						</div>
+
+						<div class="form-group">
+							<label for="facebook">Facebook</label>
+
+							<input id="facebook" name="facebook" type="text" value="" class="form-control" maxlength="255">
+						</div>
+
+						<div class="form-group">
+							<label for="twitter">Twitter</label>
+
+							<input id="twitter" name="twitter" type="text" value="" class="form-control" maxlength="255">
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="continent">Continent *</label>
+
+							<select id="continent" name="continent" class="form-control" maxlength="255">
+								<option>Europe</option>
+								<option>North America</option>
+								<option>Asia</option>
+								<option>South America</option>
+								<option>Oceania</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="country">Country *</label>
+
+							<input id="country" name="country" type="text" value="" class="form-control" maxlength="255" required>
+						</div>
+
+						<div class="form-group">
+							<label for="location">Location</label>
+
+							<input id="location" name="location" type="text" value="" class="form-control" maxlength="255">
+						</div>
+
+						<div class="form-group">
+							<label for="instagram">Instagram</label>
+
+							<input id="instagram" name="instagram" type="text" value="" class="form-control" maxlength="255">
+						</div>
+
+						<div class="form-group">
+							<label>Start date, end date</label>
+
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">
+										<i class="far fa-calendar-alt"></i>
+									</span>
+								</div>
+
+								<input id="startEndDates" name="startEndDates" type="text" value="" class="form-control float-right">
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<h4>Competitions</h4>
+
+						<div class="row">
+							<div class="col-md-6">
+								<h5>Men</h5>
+
+								<div class="form-group">
+									<div class="form-check">
+										<input id="M30+" name="competitionList" class="form-check-input" type="checkbox" value="M30+">
+
+										<label for="M30+" class="form-check-label">M30+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="M35+" name="competitionList" class="form-check-input" type="checkbox" value="M35+">
+
+										<label for="M35+" class="form-check-label">M35+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="M40+" name="competitionList" class="form-check-input" type="checkbox" value="M40+">
+
+										<label for="M40+" class="form-check-label">M40+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="M45+" name="competitionList" class="form-check-input" type="checkbox" value="M45+">
+
+										<label for="M45+" class="form-check-label">M45+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="M50+" name="competitionList" class="form-check-input" type="checkbox" value="M50+">
+
+										<label for="M50+" class="form-check-label">M50+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="M55+" name="competitionList" class="form-check-input" type="checkbox" value="M55+">
+
+										<label for="M55+" class="form-check-label">M55+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="M60+" name="competitionList" class="form-check-input" type="checkbox" value="M60+">
+
+										<label for="M60+" class="form-check-label">M60+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="M65+" name="competitionList" class="form-check-input" type="checkbox" value="M65+">
+
+										<label for="M65+" class="form-check-label">M65+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="M70+" name="competitionList" class="form-check-input" type="checkbox" value="M70+">
+
+										<label for="M70+" class="form-check-label">M70+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="M75+" name="competitionList" class="form-check-input" type="checkbox" value="M75+">
+
+										<label for="M75+" class="form-check-label">M75+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="M80+" name="competitionList" class="form-check-input" type="checkbox" value="M80+">
+
+										<label for="M80+" class="form-check-label">M80+</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<h5>Women</h5>
+
+								<div class="form-group">
+									<div class="form-check">
+										<input id="W30+" name="competitionList" class="form-check-input" type="checkbox" value="W30+">
+
+										<label for="W30+" class="form-check-label">W30+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="W35+" name="competitionList" class="form-check-input" type="checkbox" value="W35+">
+
+										<label for="W35+" class="form-check-label">W35+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="W40+" name="competitionList" class="form-check-input" type="checkbox" value="W40+">
+
+										<label for="W40+" class="form-check-label">W40+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="W45+" name="competitionList" class="form-check-input" type="checkbox" value="W45+">
+
+										<label for="W45+" class="form-check-label">W45+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="W50+" name="competitionList" class="form-check-input" type="checkbox" value="W50+">
+
+										<label for="W50+" class="form-check-label">W50+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="W55+" name="competitionList" class="form-check-input" type="checkbox" value="W55+">
+
+										<label for="W55+" class="form-check-label">W55+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="W60+" name="competitionList" class="form-check-input" type="checkbox" value="W60+">
+
+										<label for="W60+" class="form-check-label">W60+</label>
+									</div>
+
+									<div class="form-check">
+										<input id="W65+" name="competitionList" class="form-check-input" type="checkbox" value="W65+">
+
+										<label for="W65+" class="form-check-label">W65+</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card-footer">
+				<button type="submit" class="btn btn-primary">Submit</button>
+
+				<a href="/" class="btn btn-secondary">cancel</a>
+			</div>
+		</div>
+	</form>
+</div>
