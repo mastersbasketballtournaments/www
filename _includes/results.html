@@ -13,185 +13,90 @@
 		</div>
 	</div>
 
+	{% assign tournaments = site.data.tournaments | group_by: 'year' %}
+	{% assign seasons = tournaments | map: "name" %}
+
 	<div class="container p-4 py-lg-12">
 		<div class="row justify-content-center">
 			<div class="col-lg-12 py-2">
-				{% assign tournaments = site.data.tournaments | group_by: 'year' %}
-				{% assign seasons = tournaments | map: "name" %}
-
 				<h1>
 					Upcoming Tournaments ({% for season in seasons %}
-						<a href="#{{ season }}">{{ season }}</a>
+						<a href="#{{ season }}" data-toggle="scroll-link">{{ season }}</a>
 
-						{% if forloop.last != true %}
-							 |
-						{% endif %}
+						{% if forloop.last != true %}|{% endif %}
 					{% endfor %})
 				</h1>
 
 				{% for season in tournaments %}
-					<h2 id="{{ season.name }}">{{ season.name }}</h2>
+					<h2 id="{{ season.name }}" class="mt-5">{{ season.name }}</h2>
 
-					<table class="table table-hover">
-						{% for tournament in season.items %}
-							<tr>
-								<td colspan="3">
-									<h3><a href="{{ tournament.website }}" target="_blank">{{ tournament.name }}</a></h3>
-								</td>
-							</tr>
-								<tr>
-									<th>Details</th>
-									<th>Location</th>
-									<th>Competitions</th>
-								</tr>
+					{% for tournament in season.items %}
+						<div class="row">
+							<div class="col bg-teal divider-arrow divider-arrow-b divider-teal py-3 mb-3">
+								<h3><a href="{{ tournament.website }}" target="_blank" class="text-white">{{ tournament.name }}</a></h3>
+							</div>
+						</div>
 
-								<tr>
-									<td>
-										<p><strong>When:</strong> {{ tournament.dateStart }} - {{ tournament.dateEnd }}</p>
+						<div class="row mb-3">
+							<div class="col-sm-4">
+								<h4>Details</h4>
 
-										<p><strong>Contact:</strong> <a href="mailto:{{ tournament.emailAddress }}?subject=Enquiry via MastersBasketballTournaments.com">{% if tournament.contact == '' %}{{ tournament.emailAddress }}{% else %}{{ tournament.contact }}{% endif %}</a></p>
+								<p><strong>When:</strong> {{ tournament.dateStart }} - {{ tournament.dateEnd }}</p>
 
-										<div class="nav nav-icons header-block order-12">
-											{% if tournament.twitter != '' %}
-												<a href="{{ tournament.twitter }}" class="nav-link" target="_blank"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span></a>
-											{% endif %}
+								<p><strong>Contact:</strong> <a href="mailto:{{ tournament.emailAddress }}?subject=Enquiry via MastersBasketballTournaments.com">{% if tournament.contact == '' %}{{ tournament.emailAddress }}{% else %}{{ tournament.contact }}{% endif %}</a></p>
 
-											{% if tournament.facebook != '' %}
-												<a href="{{ tournament.facebook }}" class="nav-link" target="_blank"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span></a>
-											{% endif %}
+								<div class="nav nav-icons header-block order-12">
+									{% if tournament.twitter != '' %}
+										<a href="{{ tournament.twitter }}" class="nav-link" target="_blank"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span></a>
+									{% endif %}
 
-											{% if tournament.instagram != '' %}
-												<a href="{{ tournament.instagram }}" class="nav-link" target="_blank"> <i class="fab fa-instagram icon-1x"></i> <span class="sr-only">Instagram</span></a>
-											{% endif %}
-										</div>
-									</td>
+									{% if tournament.facebook != '' %}
+										<a href="{{ tournament.facebook }}" class="nav-link" target="_blank"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span></a>
+									{% endif %}
 
-									<td>
-										<strong>City:</strong> {{ tournament.location }}<br>
-										<strong>Country:</strong> {{ tournament.country }}<br>
-										<strong>Continent:</strong> {{ tournament.continent }}<br>
-									</td>
+									{% if tournament.instagram != '' %}
+										<a href="{{ tournament.instagram }}" class="nav-link" target="_blank"> <i class="fab fa-instagram icon-1x"></i> <span class="sr-only">Instagram</span></a>
+									{% endif %}
+								</div>
+							</div>
 
-									<td>
-										<table class="table table-sm">
-											<tr>
-												<th>Men</th>
-												<th>Women</th>
-											</tr>
+							<div class="col-sm-4">
+								<h4>Location</h4>
 
-											<tr>
-												<td>
-													{% assign competitions = tournament.competitions | where: 'gender', 'Men'  %}
-													<ul>
-														{% for competition in competitions %}
-															<li>{{ competition.ageOver }} and over ({{ competition.code }})</li>
-														{% endfor %}
-													</ul>
-												</td>
+								<strong>City:</strong> {{ tournament.location }}<br>
+								<strong>Country:</strong> {{ tournament.country }}<br>
+								<strong>Continent:</strong> {{ tournament.continent }}<br>
+							</div>
 
-												<td>
-													{% assign competitions = tournament.competitions | where: 'gender', 'Women'  %}
-													<ul>
-														{% for competition in competitions %}
-															<li>{{ competition.ageOver }} and over ({{ competition.code }})</li>
-														{% endfor %}
-													</ul>
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							{% endfor %}
-						</table>
-				{% endfor %}
+							<div class="col-sm-4">
+								<h4>Competitions</h4>
 
-				{% assign tournaments = site.data.tournaments-past | group_by: 'year' %}
-				{% assign seasons = tournaments | map: "name" %}
+								<div class="row">
+									<div class="col-sm-6">
+										<h5>Men</h5>
 
-				<h1>
-					Past Tournaments ({% for season in seasons %}
-						<a href="#past{{ season }}">{{ season }}</a>
+										{% assign competitions = tournament.competitions | where: 'gender', 'Men'  %}
+										<ul>
+											{% for competition in competitions %}
+												<li>{{ competition.ageOver }} and over</li>
+											{% endfor %}
+										</ul>
+									</div>
 
-						{% if forloop.last != true %}
-								|
-						{% endif %}
-					{% endfor %})
-				</h1>
+									<div class="col-sm-6">
+										<h5>Women</h5>
 
-				{% for season in tournaments %}
-					<h2 id="past{{ season.name }}">{{ season.name }}</h2>
-
-					<table class="table table-hover">
-						{% for tournament in season.items %}
-							<tr>
-								<td colspan="3">
-									<h3><a href="{{ tournament.website }}" target="_blank">{{ tournament.name }}</a></h3>
-								</td>
-							</tr>
-								<tr>
-									<th>Details</th>
-									<th>Location</th>
-									<th>Competitions</th>
-								</tr>
-
-								<tr>
-									<td>
-										<p><strong>When:</strong> {{ tournament.dateStart }} - {{ tournament.dateEnd }}</p>
-
-										<p><strong>Contact:</strong> <a href="mailto:{{ tournament.emailAddress }}?subject=Enquiry via MastersBasketballTournaments.com">{% if tournament.contact == '' %}{{ tournament.emailAddress }}{% else %}{{ tournament.contact }}{% endif %}</a></p>
-
-										<div class="nav nav-icons header-block order-12">
-											{% if tournament.twitter != '' %}
-												<a href="{{ tournament.twitter }}" class="nav-link" target="_blank"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span></a>
-											{% endif %}
-
-											{% if tournament.facebook != '' %}
-												<a href="{{ tournament.facebook }}" class="nav-link" target="_blank"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span></a>
-											{% endif %}
-
-											{% if tournament.instagram != '' %}
-												<a href="{{ tournament.instagram }}" class="nav-link" target="_blank"> <i class="fab fa-instagram icon-1x"></i> <span class="sr-only">Instagram</span></a>
-											{% endif %}
-										</div>
-									</td>
-
-									<td>
-										<strong>City:</strong> {{ tournament.location }}<br>
-										<strong>Country:</strong> {{ tournament.country }}<br>
-										<strong>Continent:</strong> {{ tournament.continent }}<br>
-									</td>
-
-									<td>
-										<table class="table table-sm">
-											<tr>
-												<th>Men</th>
-												<th>Women</th>
-											</tr>
-
-											<tr>
-												<td>
-													{% assign competitions = tournament.competitions | where: 'gender', 'Men'  %}
-													<ul>
-														{% for competition in competitions %}
-															<li>{{ competition.ageOver }} and over ({{ competition.code }})</li>
-														{% endfor %}
-													</ul>
-												</td>
-
-												<td>
-													{% assign competitions = tournament.competitions | where: 'gender', 'Women'  %}
-													<ul>
-														{% for competition in competitions %}
-															<li>{{ competition.ageOver }} and over ({{ competition.code }})</li>
-														{% endfor %}
-													</ul>
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							{% endfor %}
-						</table>
+										{% assign competitions = tournament.competitions | where: 'gender', 'Women'  %}
+										<ul>
+											{% for competition in competitions %}
+												<li>{{ competition.ageOver }} and over</li>
+											{% endfor %}
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
 				{% endfor %}
 			</div>
 		</div>
