@@ -5,9 +5,12 @@ baseurl:
 
 environment: production
 
-#collections:
-#  tournaments:
-#    output: true
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
 
 timezone: UTC
 
