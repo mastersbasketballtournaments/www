@@ -51,7 +51,7 @@
 
 					<div class="col-md-4">
 						<div class="form-group">
-							<label>Start date, end date</label>
+							<label>Start date, end date *</label>
 
 							<div class="input-group">
 								<div class="input-group-prepend">
@@ -60,7 +60,7 @@
 									</span>
 								</div>
 
-								<input id="startEndDates" name="startEndDates" type="text" value="{% if page.formName == 'update' %}{{ tournament.dateStart }} - {{ tournament.dateEnd }}{% endif %}" class="form-control float-right">
+								<input id="startEndDates" name="startEndDates" type="text" value="{% if page.formName == 'update' %}{{ tournament.dateStart }} - {{ tournament.dateEnd }}{% endif %}" class="form-control float-right" required>
 							</div>
 						</div>
 
