@@ -60,7 +60,7 @@
 									</span>
 								</div>
 
-								<input id="startEndDates" name="startEndDates" type="text" value="{{ tournament.dateStart }} - {{ tournament.dateEnd }}" class="form-control float-right">
+								<input id="startEndDates" name="startEndDates" type="text" value="{% if page.formName == 'update' %}{{ tournament.dateStart }} - {{ tournament.dateEnd }}{% endif %}" class="form-control float-right">
 							</div>
 						</div>
 
