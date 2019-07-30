@@ -4,6 +4,6 @@ formName: update
 action: /tournament-update/thank-you/
 ---
 
-{% assign tournament = site.data.tournaments | where: 'name', 'Baltic Cup' | first %}
+{% assign tournament = site.data.tournaments | where: 'slug', 'baltic-cup' | first %}
 
 {% include update.html %}
