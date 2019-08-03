@@ -95,7 +95,7 @@
 				for( var competition in data.competitions ) {
 					var code = data.competitions[ competition ].code;
 
-					$( 'input[id="' + code + '"]' ).prop( 'checked' );
+					$( 'input[id="' + code + '"]' ).prop( 'checked', true );
 				}
 			} );
 		}
