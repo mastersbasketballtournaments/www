@@ -31,9 +31,13 @@
 					<h2 id="{{ season.name }}" class="mt-5">{{ season.name }}</h2>
 
 					{% for tournament in season.items %}
-						<div class="row">
-							<div class="col bg-teal divider-arrow divider-arrow-b divider-teal py-3 mb-3">
+						<div id="{{ tournament.slug }}" class="row bg-teal divider-arrow divider-arrow-b divider-teal py-3 mb-3 align-items-center">
+							<div class="col-auto mr-auto">
 								<h3><a href="{{ tournament.website }}" target="_blank" class="text-white">{{ tournament.name }}</a></h3>
+							</div>
+
+							<div class="col-auto">
+								<a href="/tournament-update/{{ tournament.slug }}.html" class="text-white">Suggest Update</a>
 							</div>
 						</div>
 
