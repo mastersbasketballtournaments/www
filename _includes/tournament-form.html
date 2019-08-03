@@ -1,5 +1,5 @@
 <div class="container mt-5">
-	<form name="{{ page.formName }}" action="{{ page.action }}" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+	<form id="{{ page.formName }}" name="{{ page.formName }}" action="{{ page.action }}" method="POST" data-netlify="true" data-netlify-recaptcha="true">
 		<div class="card">
 			<div class="card-header card-primary">
 				<h3 class="card-title text-white">{{ page.title }}</h3>
@@ -11,19 +11,19 @@
 						<div class="form-group">
 							<label for="name">Name *</label>
 
-							<input id="name" name="name" type="text" value="{{ tournament.name }}" class="form-control" maxlength="255" autofocus required>
+							<input id="name" name="name" type="text" value="" class="form-control" maxlength="255" autofocus required>
 						</div>
 
 						<div class="form-group">
 							<label for="contact">Contact name</label>
 
-							<input id="contact" name="contact" type="text" value="{{ tournament.contact }}" class="form-control" maxlength="255">
+							<input id="contact" name="contact" type="text" value="" class="form-control" maxlength="255">
 						</div>
 
 						<div class="form-group">
 							<label for="emailAddress">Email address</label>
 
-							<input id="emailAddress" name="emailAddress" type="email" value="{{ tournament.emailAddress }}" class="form-control" maxlength="255">
+							<input id="emailAddress" name="emailAddress" type="email" value="" class="form-control" maxlength="255">
 						</div>
 
 						<div class="form-group">
@@ -39,13 +39,13 @@
 						<div class="form-group">
 							<label for="country">Country *</label>
 
-							<input id="country" name="country" type="text" value="{{ tournament.country }}" class="form-control" maxlength="255" required>
+							<input id="country" name="country" type="text" value="" class="form-control" maxlength="255" required>
 						</div>
 
 						<div class="form-group">
 							<label for="location">Location</label>
 
-							<input id="location" name="location" type="text" value="{{ tournament.location }}" class="form-control" maxlength="255">
+							<input id="location" name="location" type="text" value="" class="form-control" maxlength="255">
 						</div>
 					</div>
 
@@ -60,32 +60,32 @@
 									</span>
 								</div>
 
-								<input id="startEndDates" name="startEndDates" type="text" value="{% if page.formName == 'update' %}{{ tournament.dateStart }} - {{ tournament.dateEnd }}{% endif %}" class="form-control float-right" required>
+								<input id="startEndDates" name="startEndDates" type="text" value="" class="form-control float-right" required>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="website">Website *</label>
 
-							<input id="website" name="website" type="text" value="{{ tournament.website }}" class="form-control" maxlength="255" required>
+							<input id="website" name="website" type="text" value="" class="form-control" maxlength="255" required>
 						</div>
 
 						<div class="form-group">
 							<label for="facebook">Facebook</label>
 
-							<input id="facebook" name="facebook" type="text" value="{{ tournament.facebook }}" class="form-control" maxlength="255">
+							<input id="facebook" name="facebook" type="text" value="" class="form-control" maxlength="255">
 						</div>
 
 						<div class="form-group">
 							<label for="twitter">Twitter</label>
 
-							<input id="twitter" name="twitter" type="text" value="{{ tournament.twitter }}" class="form-control" maxlength="255">
+							<input id="twitter" name="twitter" type="text" value="" class="form-control" maxlength="255">
 						</div>
 
 						<div class="form-group">
 							<label for="instagram">Instagram</label>
 
-							<input id="instagram" name="instagram" type="text" value="{{ tournament.instagram }}" class="form-control" maxlength="255">
+							<input id="instagram" name="instagram" type="text" value="" class="form-control" maxlength="255">
 						</div>
 					</div>
 
