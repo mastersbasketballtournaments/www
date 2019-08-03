@@ -1,5 +1,6 @@
 url: http://localhost:4000
+api: http://api.mastersbasketballtournaments.localtest.me:62755/v1
 
-environment: production
+environment: development
 
 incremental: true
