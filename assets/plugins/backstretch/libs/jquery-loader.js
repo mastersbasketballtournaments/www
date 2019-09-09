@@ -4,7 +4,7 @@
   var path;
   if (jqversion) {
     // A version was specified, load that version from code.jquery.com.
-    path = 'http://code.jquery.com/jquery-' + jqversion[1] + '.js';
+    path = 'https://code.jquery.com/jquery-' + jqversion[1] + '.js';
   } else {
     // No version was specified, load the local version.
     path = '../libs/jquery/jquery.js';
