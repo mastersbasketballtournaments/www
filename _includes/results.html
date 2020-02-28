@@ -13,8 +13,8 @@
 		</div>
 	</div>
 
-	{% assign tournaments = site.data.tournaments | group_by: 'year' %}
-	{% assign seasons = tournaments | map: "name" %}
+	{% assign tournaments = tournaments %}
+	{% assign seasons = tournaments | map: "year" | uniq %}
 
 	<div class="container p-4 py-lg-12">
 		<div class="row justify-content-center">
@@ -31,10 +31,12 @@
 					<a href="/tournament-suggestion.html" class="mt-5 btn btn-xlg btn-primary btn-rounded">Let us know if we've missed one!</a>
 				</div>
 
-				{% for season in tournaments %}
-					<h2 id="{{ season.name }}" class="mt-5">{{ season.name }}</h2>
+				{% for season in seasons %}
+					<h2 id="{{ season }}" class="mt-5">{{ season }}</h2>
 
-					{% for tournament in season.items %}
+					{% assign tournamentsInSeason = tournaments | where: 'year', season %}
+
+					{% for tournament in tournamentsInSeason %}
 						<a id="{{ tournament.slug }}" class="tournament-link">&nbsp;</a>
 
 						<div class="row bg-teal divider-arrow divider-arrow-b divider-teal py-3 mb-3 align-items-center">
