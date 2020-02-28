@@ -1,0 +1,23 @@
+{
+  "name": "webroot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://mastersbasketballtournaments@gitlab.com/mastersbasketballtournaments/www.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/mastersbasketballtournaments/www/issues"
+  },
+  "homepage": "https://gitlab.com/mastersbasketballtournaments/www#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0"
+  }
+}

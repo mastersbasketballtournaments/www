@@ -1,0 +1,4 @@
+[build] # default master branch
+  command = "ELEVENTY_ENV=production eleventy"
+[context.preview] # 'preview' is the branch name
+  command = "ELEVENTY_ENV=preview eleventy"
