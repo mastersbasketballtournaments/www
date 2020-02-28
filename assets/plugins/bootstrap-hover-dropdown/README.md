@@ -1,7 +1,7 @@
 Bootstrap Hover Dropdown Plugin
 ===============================
 
-![Current Version](http://img.shields.io/github/tag/cwspear/bootstrap-hover-dropdown.svg?style=flat)
+![Current Version](https://img.shields.io/github/tag/cwspear/bootstrap-hover-dropdown.svg?style=flat)
 
 #### Name Change
 
