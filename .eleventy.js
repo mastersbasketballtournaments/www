@@ -14,6 +14,10 @@ module.exports = function( eleventyConfig ) {
 		console.log( anything );
 	} );
 
+	eleventyConfig.addFilter( 'where', function( array, property, value ) {
+		return array.filter( p => p[ property ] == value );
+	} );
+
 	eleventyConfig.addDataExtension( 'yml', contents => yaml.safeLoad( contents ) );
 
 	eleventyConfig.setBrowserSyncConfig( {
