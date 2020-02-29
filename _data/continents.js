@@ -1,5 +1,7 @@
 const axios = require( 'axios' ).default;
 
+let api;
+
 switch ( process.env.ELEVENTY_ENV ) {
 	case 'development':
 		api = 'http://api.mastersbasketballtournaments.localtest.me/v1/';
