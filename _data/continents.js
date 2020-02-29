@@ -1,27 +1,21 @@
-module.exports = function() {
-/*
-	return new Promise( (resolve, reject ) => {
-		resolve( [
-			"user1",
-			"user2"
-		] );
-	} );
-*/
+const axios = require( 'axios' ).default;
 
-/*
-	return new Promise( ( resolve, reject ) => {
-		fetch( API_PATH )
-			.then( json => response.json() )
-			.then( data => resolve( data ) )
-			.catch( e => reject( e ) );
-	} );
-*/
+module.exports = async function() {
+	return axios.get( 'http://api.mastersbasketballtournaments.localtest.me/v1/continents/' )
+		.then( function( response ) {
+			// handle success
 
-	return [
-		'Europe',
-		'North America',
-		'Asia',
-		'South America',
-		'Oceania',
-	];
+			return response.data;
+		} )
+		.catch( function( error ) {
+			// handle error
+
+			console.log( error );
+
+			return error;
+		// } )
+		// .then( function() {
+			// always executed
+			// return continents;
+		} );
 };
