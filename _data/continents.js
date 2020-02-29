@@ -1,7 +1,16 @@
 const axios = require( 'axios' ).default;
 
+switch ( process.env.ELEVENTY_ENV ) {
+	case 'development':
+		api = 'http://api.mastersbasketballtournaments.localtest.me/v1/';
+	break;
+
+	default:
+		api = 'https://api.mastersbasketballtournaments.com/v1/';
+}
+
 module.exports = async function() {
-	return axios.get( 'http://api.mastersbasketballtournaments.localtest.me/v1/continents/' )
+	return axios.get( api + 'continents/' )
 		.then( function( response ) {
 			// handle success
 
