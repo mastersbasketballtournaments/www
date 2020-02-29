@@ -3,6 +3,7 @@ const yaml = require( 'js-yaml' );
 
 module.exports = function( eleventyConfig ) {
 	eleventyConfig.setTemplateFormats( 'html,md' );
+	eleventyConfig.setQuietMode( true );
 
 	eleventyConfig.addPassthroughCopy( 'assets' );
 	eleventyConfig.addPassthroughCopy( 'images' );
@@ -11,7 +12,7 @@ module.exports = function( eleventyConfig ) {
 	eleventyConfig.addPassthroughCopy( 'favicon' );
 
 	eleventyConfig.addFilter( 'dump', function( anything ) {
-		console.log( anything );
+		console.log( 'dump:', anything );
 	} );
 
 	eleventyConfig.addFilter( 'where', function( array, property, value ) {
@@ -21,7 +22,8 @@ module.exports = function( eleventyConfig ) {
 	eleventyConfig.addDataExtension( 'yml', contents => yaml.safeLoad( contents ) );
 
 	eleventyConfig.setBrowserSyncConfig( {
-		ui: false,
-		ghostMode: false
+		ui: false
+		,ghostMode: false
+		,logLevel: 'silent'
 	} );
 };
