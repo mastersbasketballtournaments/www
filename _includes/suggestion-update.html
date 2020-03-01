@@ -70,35 +70,6 @@
 		$( 'input[name="startEndDates"]' ).on( 'cancel.daterangepicker', function( ev, picker ) {
 			$( this ).val( '' );
 		} );
-
-		if( $( '#update' ).length) {
-			$.ajax( {
-				url: '{{ site.api }}/tournaments/' + window.location.search.substring( 1 ).split( '=' )[ 1 ]
-				,method: 'GET'
-				,dataType: 'json'
-			} ).done( function( data ) {
-				$( 'input[id="name"]' ).val( data.name );
-				$( 'input[id="contact"]' ).val( data.contact );
-				$( 'input[id="emailAddress"]' ).val( data.emailAddress );
-
-				$( 'input[id="continent"]' ).val( data.continent );
-				$( 'input[id="country"]' ).val( data.country );
-				$( 'input[id="location"]' ).val( data.location );
-
-				$( 'input[id="startEndDates"]' ).val( data.startEndDates );
-
-				$( 'input[id="website"]' ).val( data.website );
-				$( 'input[id="facebook"]' ).val( data.facebook );
-				$( 'input[id="twitter"]' ).val( data.twitter );
-				$( 'input[id="instagram"]' ).val( data.instagram );
-
-				for( var competition in data.competitions ) {
-					var code = data.competitions[ competition ].code;
-
-					$( 'input[id="' + code + '"]' ).prop( 'checked', true );
-				}
-			} );
-		}
 	} );
 </script>
 
