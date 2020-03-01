@@ -41,7 +41,13 @@
 
 						<div class="row bg-teal divider-arrow divider-arrow-b divider-teal py-3 mb-3 align-items-center">
 							<div class="col-auto mr-auto">
-								<h3><a href="{{ tournament.website }}" target="_blank" class="text-white">{{ tournament.name }}</a></h3>
+								<h3>
+									<a href="{{ site.url }}#{{ tournament.slug }}" class="text-white"><i class="la la-link" style="text-decoration:none;"></i><span class="sr-only">Link</span></a>
+
+									<a href="{{ tournament.website }}" target="_blank" class="text-white">{{ tournament.name }}</a>
+
+									<a href="{{ tournament.website }}" target="_blank" class="text-white"><i class="la la-external-link" style="text-decoration:none;"></i><span class="sr-only">Link</span></a>
+								</h3>
 							</div>
 
 							<div class="col-auto">
