@@ -1,5 +1,4 @@
-// add yaml support with npm install js-yaml --save-dev
-const yaml = require( 'js-yaml' );
+require( 'dotenv' ).config();
 
 module.exports = function( eleventyConfig ) {
 	eleventyConfig.setTemplateFormats( 'html,md' );
@@ -18,8 +17,6 @@ module.exports = function( eleventyConfig ) {
 	eleventyConfig.addFilter( 'where', function( array, property, value ) {
 		return array.filter( p => p[ property ] == value );
 	} );
-
-	eleventyConfig.addDataExtension( 'yml', contents => yaml.safeLoad( contents ) );
 
 	eleventyConfig.setBrowserSyncConfig( {
 		ui: false
