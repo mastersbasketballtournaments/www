@@ -23,7 +23,6 @@ module.exports = async function() {
 
 				return {
 					year: startDate.format( 'YYYY' )
-					,slug: 'record.slug'
 					,website: record.website
 					,name: record.name
 					,emailAddress: record.emailAddress
