@@ -9,7 +9,7 @@ const client = sanityClient( {
 } );
 
 module.exports = async function() {
-	const query = '*[ _type == "tournament" && endDate > now() ] | order( startDate ) { ... }'
+	const query = '*[ _type == "tournament" && endDate > now() ] | order( startDate ) { continent->, ... }'
 
 	return await client.fetch( query, {} )
 		.then( response => {
