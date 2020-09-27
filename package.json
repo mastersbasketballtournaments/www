@@ -18,6 +18,10 @@
   },
   "homepage": "https://gitlab.com/mastersbasketballtournaments/www#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0"
+    "@11ty/eleventy": "^0.10.0",
+    "dotenv": "^8.2.0"
+  },
+  "dependencies": {
+    "moment": "^2.29.0"
   }
 }
