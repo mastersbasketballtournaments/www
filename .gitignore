@@ -1,6 +1,5 @@
 _site
-.sass-cache
-.jekyll-metadata
 .DS_Store
-/Gemfile.lock
+.env
 /node_modules
+/sanity/node_modules
