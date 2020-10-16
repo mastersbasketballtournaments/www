@@ -1,10 +1,8 @@
-let url;
+require( 'dotenv' ).config();
+
+let url = 'https://www.mastersbasketballtournaments.com/';
 
 switch ( process.env.ELEVENTY_ENV ) {
-	case 'production':
-		url = 'https://www.mastersbasketballtournaments.com/';
-	break;
-
 	case 'development':
 		url = 'http://localhost:8080/';
 	break;
