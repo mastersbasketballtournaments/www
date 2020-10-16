@@ -13,8 +13,7 @@
 		</div>
 	</div>
 
-	{% assign tournaments = tournaments %}
-	{% assign seasons = tournaments | map: "year" | uniq %}
+	{%- assign seasons = seasons | map: "season" | uniq -%}
 
 	<div class="container p-4 py-lg-12">
 		<div class="row justify-content-center">
@@ -23,7 +22,7 @@
 					Upcoming Tournaments ({% for season in seasons %}
 						<a href="#{{ season }}" data-toggle="scroll-link">{{ season }}</a>
 
-						{% if forloop.last != true %}|{% endif %}
+						{%- if forloop.last != true -%}|{% endif %}
 					{% endfor %})
 				</h1>
 
@@ -31,18 +30,18 @@
 					<a href="/tournament-suggestion/" class="mt-5 btn btn-xlg btn-primary btn-rounded">Let us know if we've missed one!</a>
 				</div>
 
-				{% for season in seasons %}
+				{%- for season in seasons -%}
 					<h2 id="{{ season }}" class="mt-5">{{ season }}</h2>
 
-					{% assign tournamentsInSeason = tournaments | where: 'year', season %}
+					{%- assign tournamentsInSeason = tournaments | where: 'year', season -%}
 
-					{% for tournament in tournamentsInSeason %}
-						<a id="{{ tournament.slug }}" class="tournament-link">&nbsp;</a>
+					{%- for tournament in tournamentsInSeason -%}
+						<a id="{{ tournament.name | slug }}" class="tournament-link">&nbsp;</a>
 
 						<div class="row bg-teal divider-arrow divider-arrow-b divider-teal py-3 mb-3 align-items-center">
 							<div class="col-auto mr-auto">
 								<h3>
-									<a href="{{ site.url }}#{{ tournament.slug }}" class="text-white"><i class="la la-link" style="text-decoration:none;"></i><span class="sr-only">Link</span></a>
+									<a href="{{ site.url }}#{{ tournament.name | slug }}" class="text-white"><i class="la la-link" style="text-decoration:none;"></i><span class="sr-only">Link</span></a>
 
 									<a href="{{ tournament.website }}" target="_blank" class="text-white">{{ tournament.name }}</a>
 
@@ -51,7 +50,7 @@
 							</div>
 
 							<div class="col-auto">
-								<a href="/tournament-update/{{ tournament.name | slug }}" class="text-white">Suggest an Update</a>
+								<a href="/tournament-update/{{ tournament.name | name | slug }}" class="text-white">Suggest an Update</a>
 							</div>
 						</div>
 
@@ -61,18 +60,18 @@
 
 								<p><strong>When:</strong> {{ tournament.dateStart }} - {{ tournament.dateEnd }}</p>
 
-								<p><strong>Contact:</strong> <a href="mailto:{{ tournament.emailAddress }}?subject=Enquiry via MastersBasketballTournaments.com">{% if tournament.contact == '' %}{{ tournament.emailAddress }}{% else %}{{ tournament.contact }}{% endif %}</a></p>
+								<p><strong>Contact:</strong> <a href="mailto:{{ tournament.emailAddress }}?subject=Enquiry via MastersBasketballTournaments.com">{%- if tournament.contact == '' -%}{{ tournament.emailAddress }}{% else %}{{ tournament.contact }}{% endif %}</a></p>
 
 								<div class="nav nav-icons header-block order-12">
-									{% if tournament.twitter != '' %}
+									{%- if tournament.twitter != '' -%}
 										<a href="{{ tournament.twitter }}" class="nav-link" target="_blank"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span></a>
 									{% endif %}
 
-									{% if tournament.facebook != '' %}
+									{%- if tournament.facebook != '' -%}
 										<a href="{{ tournament.facebook }}" class="nav-link" target="_blank"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span></a>
 									{% endif %}
 
-									{% if tournament.instagram != '' %}
+									{%- if tournament.instagram != '' -%}
 										<a href="{{ tournament.instagram }}" class="nav-link" target="_blank"> <i class="fab fa-instagram icon-1x"></i> <span class="sr-only">Instagram</span></a>
 									{% endif %}
 								</div>
@@ -86,33 +85,41 @@
 								<strong>Continent:</strong> {{ tournament.continent }}<br>
 							</div>
 
-							<div class="col-sm-4">
-								<h4>Competitions</h4>
+							{%- if tournament.competitions.size > 0 -%}
+								<div class="col-sm-4">
+									<h4>Competitions</h4>
 
-								<div class="row">
-									<div class="col-sm-6">
-										<h5>Men</h5>
+									<div class="row">
+										<div class="col-sm-6">
+											{%- assign competitions = tournament.competitions | where: 'gender', 'M'  -%}
 
-										{% assign competitions = tournament.competitions | where: 'gender', 'Men'  %}
-										<ul>
-											{% for competition in competitions %}
-												<li>{{ competition.ageOver }} and over</li>
-											{% endfor %}
-										</ul>
-									</div>
+											{%- if competitions.size > 0 -%}
+												<h5>Men</h5>
 
-									<div class="col-sm-6">
-										<h5>Women</h5>
+												<ul>
+													{%- for competition in competitions -%}
+														<li>{{ competition.ageOver }} and over</li>
+													{% endfor %}
+												</ul>
+											{% endif %}
+										</div>
 
-										{% assign competitions = tournament.competitions | where: 'gender', 'Women'  %}
-										<ul>
-											{% for competition in competitions %}
-												<li>{{ competition.ageOver }} and over</li>
-											{% endfor %}
-										</ul>
+										<div class="col-sm-6">
+											{%- assign competitions = tournament.competitions | where: 'gender', 'W'  -%}
+
+											{%- if competitions.size > 0 -%}
+												<h5>Women</h5>
+
+												<ul>
+													{%- for competition in competitions -%}
+														<li>{{ competition.ageOver }} and over</li>
+													{% endfor %}
+												</ul>
+											{% endif %}
+										</div>
 									</div>
 								</div>
-							</div>
+							{% endif %}
 						</div>
 					{% endfor %}
 				{% endfor %}
