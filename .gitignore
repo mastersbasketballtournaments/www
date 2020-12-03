@@ -1,5 +1,4 @@
-_site
+_site/
 .DS_Store
 .env
-/node_modules
-/sanity/node_modules
+node_modules/
