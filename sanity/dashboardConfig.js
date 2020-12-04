@@ -8,8 +8,8 @@ export default {
 					{
 						title: 'Masters Basketball Tournaments'
 						,name: 'mastersbasketballtournaments'
-						,apiId: process.env.SANITY_TOKEN
-						,buildHookId: process.env.NETLIFY_BUILD_HOOK
+						,apiId: process.env.SANITY_STUDIO_NETLIFY_API_ID
+						,buildHookId: process.env.SANITY_STUDIO_NETLIFY_BUILD_HOOK
 					}
 				]
 			}
