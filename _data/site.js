@@ -16,4 +16,5 @@ module.exports = {
 	,title: 'Masters Basketball Tournaments'
 	,environment: process.env.ELEVENTY_ENV
 	,timezone: 'UTC'
+	,buildDateTime: new Date()
 };
