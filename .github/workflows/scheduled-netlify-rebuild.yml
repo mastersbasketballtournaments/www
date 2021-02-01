@@ -1,0 +1,16 @@
+# https://chan.dev/posts/schedule-netlify-builds-with-github-actions/
+name: Schedule Netlify Build
+
+on:
+  schedule:
+    # run daily at 02:37
+    - cron: "37 2 * * *"
+
+jobs:
+  build:
+    name: Call Netlify build hook
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Curl request
+        run: curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_WEBHOOK_URL }}
