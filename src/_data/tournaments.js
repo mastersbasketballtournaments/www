@@ -35,7 +35,7 @@ module.exports = async function() {
 					,instagram: record.instagram
 					,location: record.location
 					,country: record.country
-					,continent: record.continent.name
+					// ,continent: record.continent.name
 					,competitions: competitions
 				};
 			} );
