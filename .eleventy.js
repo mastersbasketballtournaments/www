@@ -4,11 +4,11 @@ module.exports = function( eleventyConfig ) {
 	eleventyConfig.setTemplateFormats( 'html,md' );
 	eleventyConfig.setQuietMode( true );
 
-	eleventyConfig.addPassthroughCopy( 'assets' );
-	eleventyConfig.addPassthroughCopy( 'images' );
-	eleventyConfig.addPassthroughCopy( 'fonts' );
-	eleventyConfig.addPassthroughCopy( 'site.webmanifest' );
-	eleventyConfig.addPassthroughCopy( 'favicon' );
+	eleventyConfig.addPassthroughCopy( './src/assets' );
+	eleventyConfig.addPassthroughCopy( './src/images' );
+	eleventyConfig.addPassthroughCopy( './src/fonts' );
+	eleventyConfig.addPassthroughCopy( './src/site.webmanifest' );
+	eleventyConfig.addPassthroughCopy( './src/favicon' );
 
 	eleventyConfig.addFilter( 'dump', function( anything ) {
 		console.log( 'dump:', anything );
