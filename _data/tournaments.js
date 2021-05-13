@@ -5,6 +5,7 @@ const client = sanityClient( {
 	projectId: process.env.SANITY_PROJECTID,
 	dataset: process.env.SANITY_DATASET,
 	token: process.env.SANITY_TOKEN,
+	apiVersion: '2021-03-25',
 	useCdn: false
 } );
 
