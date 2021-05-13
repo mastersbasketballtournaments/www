@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-		"build": "rm -rf ./_site && npm run build:eleventy",
-		"build:eleventy": "npx @11ty/eleventy --input ./src/",
-		"dev": "rm -rf ./_site && npm run dev:eleventy",
-		"dev:eleventy": "npx @11ty/eleventy --input ./src/ --serve"
+    "build": "rm -rf ./_site && npm run build:eleventy",
+    "build:eleventy": "npx @11ty/eleventy --input ./src/",
+    "dev": "rm -rf ./_site && npm run dev:eleventy",
+    "dev:eleventy": "npx @11ty/eleventy --input ./src/ --serve"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   },
   "homepage": "https://gitlab.com/mastersbasketballtournaments/www#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy": "^0.12.1",
     "dotenv": "^8.2.0"
   },
   "dependencies": {
