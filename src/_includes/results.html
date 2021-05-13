@@ -82,7 +82,9 @@
 
 								<strong>City:</strong> {{ tournament.location }}<br>
 								<strong>Country:</strong> {{ tournament.country }}<br>
+								{%- comment -%}
 								<strong>Continent:</strong> {{ tournament.continent }}<br>
+								{%- endcomment -%}
 							</div>
 
 							{%- if tournament.competitions.size > 0 -%}
