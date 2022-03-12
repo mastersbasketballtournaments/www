@@ -63,17 +63,17 @@
 								<p><strong>Contact:</strong> <a href="mailto:{{ tournament.emailAddress }}?subject=Enquiry via MastersBasketballTournaments.com">{%- if tournament.contact == '' -%}{{ tournament.emailAddress }}{% else %}{{ tournament.contact }}{% endif %}</a></p>
 
 								<div class="nav nav-icons header-block order-12">
-									{%- if tournament.twitter != '' -%}
+									{%- if tournament.twitter %}
 										<a href="{{ tournament.twitter }}" class="nav-link" target="_blank"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span></a>
-									{% endif %}
+									{%- endif %}
 
-									{%- if tournament.facebook != '' -%}
+									{%- if tournament.facebook %}
 										<a href="{{ tournament.facebook }}" class="nav-link" target="_blank"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span></a>
-									{% endif %}
+									{%- endif %}
 
-									{%- if tournament.instagram != '' -%}
+									{%- if tournament.instagram %}
 										<a href="{{ tournament.instagram }}" class="nav-link" target="_blank"> <i class="fab fa-instagram icon-1x"></i> <span class="sr-only">Instagram</span></a>
-									{% endif %}
+									{%- endif %}
 								</div>
 							</div>
 
