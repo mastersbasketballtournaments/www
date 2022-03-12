@@ -10,6 +10,8 @@ module.exports = function( eleventyConfig ) {
 	eleventyConfig.addPassthroughCopy( './src/site.webmanifest' );
 	eleventyConfig.addPassthroughCopy( './src/favicon' );
 
+	eleventyConfig.addShortcode( 'year', () => `${ new Date().getFullYear() }`);
+
 	eleventyConfig.addFilter( 'dump', function( anything ) {
 		console.log( 'dump:', anything );
 	} );
