@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ./_site && npm run build:eleventy",
+    "build": "rm -rf ./_site && rm -rf ./.cache && npm run build:eleventy",
     "build:eleventy": "npx @11ty/eleventy --input ./src/",
-    "dev": "rm -rf ./_site && npm run dev:eleventy",
+    "dev": "rm -rf ./_site && rm -rf ./.cache && npm run dev:eleventy",
     "dev:eleventy": "npx @11ty/eleventy --input ./src/ --serve"
   },
   "repository": {
@@ -25,6 +25,7 @@
     "dotenv": "^8.2.0"
   },
   "dependencies": {
+    "@11ty/eleventy-fetch": "^4.0.1",
     "@sanity/client": "^2.8.0",
     "moment": "^2.29.0"
   }
