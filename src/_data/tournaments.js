@@ -1,3 +1,17 @@
+const EleventyFetch = require( '@11ty/eleventy-fetch' );
+
+module.exports = async function () {
+	let url = 'http://cms.mastersbasketballtournaments.localhost/api/tournaments';
+
+	return EleventyFetch( url, {
+		duration: '1d'
+		,type: 'json'
+	} );
+};
+
+
+
+/*
 const moment = require( 'moment' );
 
 const sanityClient = require( '@sanity/client' )
@@ -44,3 +58,4 @@ module.exports = async function() {
 			error => console.error( error )
 		);
 }
+*/

@@ -13,7 +13,7 @@
 		</div>
 	</div>
 
-	{%- assign seasons = seasons | map: "season" | uniq -%}
+	{%- assign seasons = seasons.data | map: "season" | uniq -%}
 
 	<div class="container p-4 py-lg-12">
 		<div class="row justify-content-center">
@@ -33,7 +33,7 @@
 				{%- for season in seasons -%}
 					<h2 id="{{ season }}" class="mt-5">{{ season }}</h2>
 
-					{%- assign tournamentsInSeason = tournaments | where: 'year', season -%}
+					{%- assign tournamentsInSeason = tournaments.data | where: 'year', season -%}
 
 					{%- for tournament in tournamentsInSeason -%}
 						<a id="{{ tournament.name | slug }}" class="tournament-link">&nbsp;</a>
@@ -63,15 +63,15 @@
 								<p><strong>Contact:</strong> <a href="mailto:{{ tournament.emailAddress }}?subject=Enquiry via MastersBasketballTournaments.com">{%- if tournament.contact == '' -%}{{ tournament.emailAddress }}{% else %}{{ tournament.contact }}{% endif %}</a></p>
 
 								<div class="nav nav-icons header-block order-12">
-									{%- if tournament.twitter %}
+									{%- if tournament.twitter != '' %}
 										<a href="{{ tournament.twitter }}" class="nav-link" target="_blank"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span></a>
 									{%- endif %}
 
-									{%- if tournament.facebook %}
+									{%- if tournament.facebook != '' %}
 										<a href="{{ tournament.facebook }}" class="nav-link" target="_blank"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span></a>
 									{%- endif %}
 
-									{%- if tournament.instagram %}
+									{%- if tournament.instagram != '' %}
 										<a href="{{ tournament.instagram }}" class="nav-link" target="_blank"> <i class="fab fa-instagram icon-1x"></i> <span class="sr-only">Instagram</span></a>
 									{%- endif %}
 								</div>
