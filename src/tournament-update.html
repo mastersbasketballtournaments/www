@@ -5,11 +5,11 @@ pagination:
     data: tournaments
     size: 1
     alias: tournament
-permalink: 'tournament-update/{{ tournament.name | slug }}/'
+permalink: 'tournament-update/{{ tournament.name | slugify }}/'
 
 formName: update
 action: /thank-you/
 thankyou: Thank you for the tournament update!
 ---
 
-{% include suggestion-update.html %}
+{% include 'suggestion-update.html' %}

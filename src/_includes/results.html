@@ -36,12 +36,12 @@
 					{%- assign tournamentsInSeason = tournaments.data | where: 'year', season -%}
 
 					{%- for tournament in tournamentsInSeason -%}
-						<a id="{{ tournament.name | slug }}" class="tournament-link">&nbsp;</a>
+						<a id="{{ tournament.name | slugify }}" class="tournament-link">&nbsp;</a>
 
 						<div class="row bg-teal divider-arrow divider-arrow-b divider-teal py-3 mb-3 align-items-center">
 							<div class="col-auto mr-auto">
 								<h3>
-									<a href="{{ site.url }}#{{ tournament.name | slug }}" class="text-white"><i class="la la-link" style="text-decoration:none;"></i><span class="sr-only">Link</span></a>
+									<a href="{{ site.url }}#{{ tournament.name | slugify }}" class="text-white"><i class="la la-link" style="text-decoration:none;"></i><span class="sr-only">Link</span></a>
 
 									<a href="{{ tournament.website }}" target="_blank" class="text-white">{{ tournament.name }}</a>
 
@@ -50,7 +50,7 @@
 							</div>
 
 							<div class="col-auto">
-								<a href="/tournament-update/{{ tournament.name | name | slug }}" class="text-white">Suggest an Update</a>
+								<a href="/tournament-update/{{ tournament.name | name | slugify }}" class="text-white">Suggest an Update</a>
 							</div>
 						</div>
 

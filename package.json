@@ -21,10 +21,10 @@
   },
   "homepage": "https://gitlab.com/mastersbasketballtournaments/www#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
     "dotenv": "^8.2.0"
   },
   "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-fetch": "^4.0.1",
     "@sanity/client": "^2.8.0",
     "moment": "^2.29.0"
