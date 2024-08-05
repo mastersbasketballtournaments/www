@@ -1,11 +1,25 @@
+require( 'dotenv' ).config();
+
 const EleventyFetch = require( '@11ty/eleventy-fetch' );
 
-module.exports = async function () {
-	let url = 'http://cms.mastersbasketballtournaments.localhost/api/seasons';
+switch ( process.env.ELEVENTY_ENV ) {
+	case 'development':
+		url = 'http://cms.mastersbasketballtournaments.localhost/api/seasons/';
+	break;
 
+	default:
+		url = 'https://cms.mastersbasketballtournaments.com/api/seasons/';
+}
+
+module.exports = async function () {
 	return EleventyFetch( url, {
-		duration: '1d'
+		duration: '0d'
 		,type: 'json'
+		,fetchOptions: {
+			headers: {
+				'Authorization': process.env.API_TOKEN
+			}
+		}
 	} );
 };
 
@@ -34,4 +48,3 @@ module.exports = async function() {
 			error => console.error( error )
 		);
 }
-*/
