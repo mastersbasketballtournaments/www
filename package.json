@@ -26,7 +26,6 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-fetch": "^4.0.1",
-    "@sanity/client": "^2.8.0",
     "moment": "^2.29.0"
   }
 }
