@@ -30,9 +30,16 @@
 							<label for="continent">Continent *</label>
 
 							<select id="continent" name="continent" class="form-control" maxlength="255">
+								<option>Europe</option>
+								<option>North American</option>
+								<option>Oceania</option>
+								<option>Asia</option>
+								<option>South American</option>
+								{%- comment %}
 								{% for continent in continents %}
-									<option {% if tournament.continent == continent %}selected{% endif %}>{{ continent.name }}</option>
+								<option {% if tournament.continent == continent %}selected{% endif %}>{{ continent.name }}</option>
 								{% endfor %}
+								{%- endcomment %}
 							</select>
 						</div>
 
