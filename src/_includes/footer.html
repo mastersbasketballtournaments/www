@@ -25,31 +25,42 @@
 			</div>
 
 			<div class="col-md-4">
-				<form name="contact" netlify>
-				<h4 class="text-uppercase text-grey-dark">
-					Contact Us
-				</h4>
+				<form name="Contact" action="/thank-you" method="POST" data-netlify-recaptcha="true" netlify-honeypot="year" netlify>
+					<input type="hidden" name="subject" value="Contact Masters Basketball Tournaments" data-remove-prefix>
+					<p style="display: none;">
+						<label>
+							Don't fill this out if you're human: <input name="year" />
+						</label>
+					</p>
 
-				<div class="form-group">
-					<input id="name" name="name" type="text" class="form-control" placeholder="What's your name?" required>
+					<h4 class="text-uppercase text-grey-dark">
+						Contact Us
+					</h4>
+
+					<div class="form-group">
+						<input id="name" name="name" type="text" class="form-control" placeholder="What's your name?" required>
+					</div>
+
+					<div class="form-group">
+						<input id="email" name="email" type="email" class="form-control" placeholder="What's your email address?" required>
+					</div>
+
+					<div class="form-group">
+						<div data-netlify-recaptcha="true"></div>
+					</div>
 				</div>
 
-				<div class="form-group">
-					<input id="emailAddress" name="emailAddress" type="email" class="form-control" placeholder="What's your email address?" required>
-				</div>
-			</div>
+				<div class="col-md-4">
+					<h4 class="text-uppercase text-grey-dark">&nbsp;</h4>
 
-			<div class="col-md-4">
-				<h4 class="text-uppercase text-grey-dark">&nbsp;</h4>
+					<div class="form-group">
+						<textarea id="comment" name="comment" class="form-control" rows="3" placeholder="What do you want to share with us?"></textarea>
+					</div>
 
-				<div class="form-group">
-					<textarea id="comment" name="comment" class="form-control" rows="3" placeholder="What do you want to share with us?"></textarea>
-				</div>
-
-				<span class="input-group">
-					<button class="btn btn-primary btn-block" type="submit">Go!</button>
-				</span>
-			</form>
+					<span class="input-group">
+						<button class="btn btn-primary btn-block" type="submit">Go!</button>
+					</span>
+				</form>
 			</div>
 		</div>
 	</div>
