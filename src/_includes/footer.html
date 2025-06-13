@@ -24,7 +24,7 @@
 				<p>If you find one that we've missed let us know!</p>
 			</div>
 
-			<div class="col-md-4">
+			<div class="col-md-8">
 				<form name="Contact" action="/thank-you" method="POST" data-netlify-recaptcha="true" netlify-honeypot="year" netlify>
 					<input type="hidden" name="subject" value="Contact Masters Basketball Tournaments" data-remove-prefix>
 					<p style="display: none;">
@@ -46,22 +46,18 @@
 					</div>
 
 					<div class="form-group">
-						<div data-netlify-recaptcha="true"></div>
+						<textarea id="comment" name="comment" class="form-control" rows="3" placeholder="What do you want to share with us?"></textarea>
 					</div>
-				</div>
-
-				<div class="col-md-4">
-					<h4 class="text-uppercase text-grey-dark">&nbsp;</h4>
 
 					<div class="form-group">
-						<textarea id="comment" name="comment" class="form-control" rows="3" placeholder="What do you want to share with us?"></textarea>
+						<div data-netlify-recaptcha="true"></div>
 					</div>
 
 					<span class="input-group">
 						<button class="btn btn-primary btn-block" type="submit">Go!</button>
 					</span>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
 	</div>
 
