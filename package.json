@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ./_site && rm -rf ./.cache && npm run build:eleventy",
-    "build:eleventy": "npx @11ty/eleventy --input ./src/",
-    "dev": "rm -rf ./_site && rm -rf ./.cache && npm run dev:eleventy",
-    "dev:eleventy": "npx @11ty/eleventy --input ./src/ --serve"
+    "start": "rm -rf ./_site && npm run dev:eleventy",
+    "dev:eleventy": "npx @11ty/eleventy --input ./src/ --serve",
+    "build": "npm run eleventy",
+    "eleventy": "npx @11ty/eleventy --input ./src/ "
   },
   "repository": {
     "type": "git",
@@ -16,16 +16,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://gitlab.com/mastersbasketballtournaments/www/issues"
   },
   "homepage": "https://gitlab.com/mastersbasketballtournaments/www#readme",
   "devDependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^16.5.0"
   },
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-fetch": "^4.0.1",
+    "@11ty/eleventy": "^3.1.1",
+    "@11ty/eleventy-fetch": "^5.1.0",
     "moment": "^2.29.0"
   }
 }

@@ -1,18 +1,14 @@
-require( 'dotenv' ).config();
+import 'dotenv/config'
+import Fetch from "@11ty/eleventy-fetch";
 
-const EleventyFetch = require( '@11ty/eleventy-fetch' );
+export default async function () {
+	let url = 'https://cms.mastersbasketballtournaments.com/api/tournaments/';
 
-switch ( process.env.ELEVENTY_ENV ) {
-	case 'development':
+	if ( process.env.ELEVENTY_ENV == 'development' ) {
 		url = 'http://cms.mastersbasketballtournaments.localhost/api/tournaments/';
-	break;
+	}
 
-	default:
-		url = 'https://cms.mastersbasketballtournaments.com/api/tournaments/';
-}
-
-module.exports = async function () {
-	return EleventyFetch( url, {
+	return Fetch( url, {
 		duration: '0d'
 		,type: 'json'
 		,fetchOptions: {

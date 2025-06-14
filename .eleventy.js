@@ -1,6 +1,6 @@
-require( 'dotenv' ).config();
+import 'dotenv/config'
 
-module.exports = function( eleventyConfig ) {
+export default async function( eleventyConfig ) {
 	eleventyConfig.setTemplateFormats( 'html,md' );
 	eleventyConfig.setQuietMode( true );
 
@@ -9,6 +9,8 @@ module.exports = function( eleventyConfig ) {
 	eleventyConfig.addPassthroughCopy( './src/fonts' );
 	eleventyConfig.addPassthroughCopy( './src/site.webmanifest' );
 	eleventyConfig.addPassthroughCopy( './src/favicon' );
+
+	eleventyConfig.addGlobalData( 'layout', 'layouts/default.html' );
 
 	eleventyConfig.addShortcode( 'year', () => `${ new Date().getFullYear() }`);
 
