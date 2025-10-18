@@ -7,3 +7,6 @@
   publish = "_site/"
   command = 'npm run build'
   environment = { ELEVENTY_ENV = 'production' } # to enable Eleventy to know the environment
+
+[functions]
+  node_bundler = 'esbuild'
