@@ -1,3 +1,4 @@
+// https://www.netlify.com/blog/how-to-schedule-deploys-with-netlify/
 import fetch from 'node-fetch';
 import { schedule } from '@netlify/functions';
 
