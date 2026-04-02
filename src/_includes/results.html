@@ -91,7 +91,7 @@
 
 									<div class="row">
 										<div class="col-sm-6">
-											{%- assign competitions = tournament.competitions | where: 'gender', 'Men'  -%}
+											{%- assign competitions = tournament.competitions | where: 'gender', 'Men' | sort: 'ageOver' -%}
 
 											{%- if competitions.size > 0 -%}
 												<h5>Men</h5>
@@ -105,7 +105,7 @@
 										</div>
 
 										<div class="col-sm-6">
-											{%- assign competitions = tournament.competitions | where: 'gender', 'Women'  -%}
+											{%- assign competitions = tournament.competitions | where: 'gender', 'Women' | sort: 'ageOver' -%}
 
 											{%- if competitions.size > 0 -%}
 												<h5>Women</h5>
