@@ -1,0 +1,6 @@
+_site/
+.DS_Store
+.env
+.env.*
+node_modules/
+/.cache
