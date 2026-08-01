@@ -1,15 +1,14 @@
 ---
 title: Update A Tournament - Change Existing Values As Required
-
 pagination:
     data: tournaments
     size: 1
     alias: tournament
 permalink: 'tournament-update/{{ tournament.name | slugify }}/'
-
 formName: update
 action: /thank-you/
 thankyou: Thank you for the tournament update!
+datePicker: true
 ---
 
-{% include 'suggestion-update.html' %}
+{% include 'tournament-form.html' %}

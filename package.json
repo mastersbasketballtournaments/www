@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "rm -rf ./_site && npm run dev:eleventy",
+    "start": "rm -rf ./_site && run-p dev:eleventy dev:css",
     "dev:eleventy": "npx @11ty/eleventy --input ./src/ --serve",
-    "build": "npm run eleventy",
-    "eleventy": "npx @11ty/eleventy --input ./src/ "
+    "dev:css": "npx @tailwindcss/cli -i ./src/_styles/app.css -o ./_site/assets/css/app.css --watch=always",
+    "build": "rm -rf ./_site && npx @11ty/eleventy --input ./src/ && npx @tailwindcss/cli -i ./src/_styles/app.css -o ./_site/assets/css/app.css --minify"
   },
   "repository": {
     "type": "git",
@@ -22,13 +22,16 @@
   },
   "homepage": "https://gitlab.com/mastersbasketballtournaments/www#readme",
   "devDependencies": {
-    "dotenv": "^16.5.0"
+    "@tailwindcss/cli": "^4.3.2",
+    "dotenv": "^16.5.0",
+    "npm-run-all2": "^8.0.4",
+    "tailwindcss": "^4.3.2"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-fetch": "^5.1.1",
     "@netlify/functions": "^5.0.0",
-    "moment": "^2.29.0",
+    "litepicker": "^2.0.12",
     "node-fetch": "^3.3.2"
   }
 }

@@ -1,30 +1,18 @@
-<footer id="footer" class="p-0 footer-light">
-	<div class="bg-dark text-white p-3 p-lg-4 text-center divider-arrow divider-arrow-b divider-dark">
-		<div class="container">
-			<hr class="hr-lg mt-0 mb-2 w-10 mx-auto hr-primary" />
-
-			<h2 class="text-center text-uppercase font-weight-bold my-0">
-				Contact Us
-			</h2>
-
-			<h5 class="text-center font-weight-light mt-2 mb-0 text-white op-5">
-				Tell us about a new tournament
-			</h5>
+<footer id="footer" class="mt-auto">
+	<div class="bg-slate-900 text-white py-10 text-center border-b-4 border-brand-500">
+		<div class="max-w-6xl mx-auto px-4">
+			<h2 class="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight">Contact Us</h2>
+			<p class="mt-2 text-slate-400 font-semibold">Tell us about a new tournament</p>
 		</div>
 	</div>
-
-	<div class="container pt-6 pb-5">
-		<div class="row">
-			<div class="col-md-4">
-				<h4 class="text-uppercase text-grey-dark">
-					About Us
-				</h4>
-
-				<p>We are a <em>dribble</em> of mature basketball players who trawl the world wide web looking for Masters basketball tournaments to play in.</p>
+	<div class="bg-slate-800 text-slate-300">
+		<div class="max-w-6xl mx-auto px-4 py-12 grid gap-10 md:grid-cols-3">
+			<div>
+				<h3 class="text-sm font-bold uppercase tracking-wider text-brand-500 mb-3">About Us</h3>
+				<p class="mb-3">We are a <em>dribble</em> of mature basketball players who trawl the world wide web looking for Masters basketball tournaments to play in.</p>
 				<p>If you find one that we've missed let us know!</p>
 			</div>
-
-			<div class="col-md-8">
+			<div class="md:col-span-2">
 				<form name="Contact" action="/thank-you" method="POST" data-netlify-recaptcha="true" netlify-honeypot="year" netlify>
 					<input type="hidden" name="subject" value="Contact Masters Basketball Tournaments" data-remove-prefix>
 					<p style="display: none;">
@@ -32,55 +20,31 @@
 							Don't fill this out if you're human: <input name="year" />
 						</label>
 					</p>
-
-					<h4 class="text-uppercase text-grey-dark">
-						Contact Us
-					</h4>
-
-					<div class="form-group">
-						<input id="name" name="name" type="text" class="form-control" placeholder="What's your name?" required>
+					<h3 class="text-sm font-bold uppercase tracking-wider text-brand-500 mb-3">Contact Us</h3>
+					<div class="mb-4">
+						<label for="name" class="sr-only">Name</label>
+						<input id="name" name="name" type="text" class="w-full rounded-lg bg-slate-700 border border-slate-600 text-white placeholder-slate-400 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="What's your name?" required>
 					</div>
-
-					<div class="form-group">
-						<input id="email" name="email" type="email" class="form-control" placeholder="What's your email address?" required>
+					<div class="mb-4">
+						<label for="email" class="sr-only">Email address</label>
+						<input id="email" name="email" type="email" class="w-full rounded-lg bg-slate-700 border border-slate-600 text-white placeholder-slate-400 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="What's your email address?" required>
 					</div>
-
-					<div class="form-group">
-						<textarea id="comment" name="comment" class="form-control" rows="3" placeholder="What do you want to share with us?"></textarea>
+					<div class="mb-4">
+						<label for="comment" class="sr-only">Message</label>
+						<textarea id="comment" name="comment" class="w-full rounded-lg bg-slate-700 border border-slate-600 text-white placeholder-slate-400 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500" rows="3" placeholder="What do you want to share with us?"></textarea>
 					</div>
-
-					<div class="form-group">
+					<div class="mb-4">
 						<div data-netlify-recaptcha="true"></div>
 					</div>
-
-					<span class="input-group">
-						<button class="btn btn-primary btn-block" type="submit">Go!</button>
-					</span>
+					<button class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-lg px-6 py-3 transition-colors" type="submit">Go!</button>
 				</form>
 			</div>
 		</div>
 	</div>
-
-	<hr class="my-0 hr-blank op-2" />
-
-	<!--@todo: replace with company copyright details-->
-	<div class="bg-grey text-sm py-3">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<p class="mb-0">Copyright {% year %} &copy; MastersBasketballTournaments.com</p>
-				</div>
-
-				<!-- <div class="col-md-6">
-					<ul class="list-inline footer-links float-md-right mb-0">
-					<li class="list-inline-item"><a href="#">Terms</a></li>
-					<li class="list-inline-item"><a href="#">Privacy</a></li>
-					<li class="list-inline-item"><a href="#">Contact Us</a></li>
-					</ul>
-				</div> -->
-			</div>
-
-			<a href="#tournaments" class="btn btn-icon btn-dark pos-fixed pos-b pos-r mr-3 mb-3 scroll-state-hidden" title="Back to tournaments" data-toggle="scroll-link" data-scroll="scroll-state"><i class="fa fa-chevron-up"></i></a>
+	<div class="bg-slate-900 text-slate-400 text-sm py-4">
+		<div class="max-w-6xl mx-auto px-4 flex items-center justify-between">
+			<p>Copyright {% year %} &copy; MastersBasketballTournaments.com</p>
+			<a href="#tournaments" title="Back to tournaments" class="text-slate-400 hover:text-brand-400 transition-colors">{% include 'icons/chevron-up.svg' %}<span class="sr-only">Back to tournaments</span></a>
 		</div>
 	</div>
 </footer>

@@ -4,9 +4,9 @@ export default async function( eleventyConfig ) {
 	eleventyConfig.setTemplateFormats( 'html,md' );
 	eleventyConfig.setQuietMode( true );
 
-	eleventyConfig.addPassthroughCopy( './src/assets' );
+	eleventyConfig.addPassthroughCopy( './src/assets/js' );
+	eleventyConfig.addPassthroughCopy( { 'node_modules/litepicker/dist/litepicker.js': 'assets/js/litepicker.js' } );
 	eleventyConfig.addPassthroughCopy( './src/images' );
-	eleventyConfig.addPassthroughCopy( './src/fonts' );
 	eleventyConfig.addPassthroughCopy( './src/site.webmanifest' );
 	eleventyConfig.addPassthroughCopy( './src/favicon' );
 
@@ -22,9 +22,7 @@ export default async function( eleventyConfig ) {
 		return array.filter( p => p[ property ] == value );
 	} );
 
-	eleventyConfig.setBrowserSyncConfig( {
-		ui: false
-		,ghostMode: false
-		,logLevel: 'silent'
+	eleventyConfig.setServerOptions( {
+		watch: [ '_site/assets/css/**/*.css' ]
 	} );
 };

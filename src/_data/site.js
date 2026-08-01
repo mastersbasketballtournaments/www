@@ -11,4 +11,6 @@ export default async function () {
 	let environment = process.env.ELEVENTY_ENV;
 	let timezone = 'UTC';
 	let buildDateTime = new Date();
+
+	return { url, title, environment, timezone, buildDateTime };
 };
