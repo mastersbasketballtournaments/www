@@ -94,7 +94,7 @@ Globals.PLUGINS.themePluginClipboard = function(context) {
   
   if ($clipboards.length > 0) {
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"],
+      ["clipboard/clipboard.min.js"],
       [],
       themePluginClipboardInit
     );

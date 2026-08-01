@@ -37,7 +37,7 @@
     // ----------------------------------------------------------------
     includeWaypoints: function(callback) {
       if (typeof jQuery.fn.waypoint === 'undefined') {
-        $document.themeLoadPlugin(['https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js'], []);
+        $document.themeLoadPlugin(['waypoints/jquery.waypoints.min.js'], []);
         var tries = 0;
         var isWaypointsDoneTimer = setInterval(function() {
           if (typeof jQuery.fn.waypoint === 'function') {

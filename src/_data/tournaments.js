@@ -1,28 +1,48 @@
 import 'dotenv/config'
 import Fetch from "@11ty/eleventy-fetch";
 
+const PRODUCTION_URL = 'https://admin.mastersbasketballtournaments.com/api/tournaments/';
+const LOCAL_URL = 'http://localhost:5173/api/tournaments/';
+
+// Give up on a local API that is hung rather than stalling the whole build
+const LOCAL_TIMEOUT = 5000;
+
 export default async function () {
-	let url = 'https://admin.mastersbasketballtournaments.com/api/tournaments/';
+	// In development prefer the local API, but fall back to production so a
+	// build still succeeds when the local API is not running.
+	let sources = [ { label: 'production', url: PRODUCTION_URL } ];
 
 	if ( process.env.ELEVENTY_ENV == 'development' ) {
-		url = 'http://localhost:5173/api/tournaments/';
+		sources.unshift( { label: 'local', url: LOCAL_URL, timeout: LOCAL_TIMEOUT } );
 	}
 
-	try {
-		let dataset = await Fetch( url, {
-			duration: '0d'
-			,type: 'json'
-			,fetchOptions: {
-				headers: {
-					'Authorization': process.env.API_TOKEN
-				}
+	for ( let source of sources ) {
+		let fetchOptions = {
+			headers: {
+				'Authorization': process.env.API_TOKEN
 			}
-		} );
+		};
 
-		return dataset;
-	} catch ( event ) {
-		console.warn("Fetch failed, SEASONS returning empty fallback", event.message);
+		if ( source.timeout ) {
+			fetchOptions.signal = AbortSignal.timeout( source.timeout );
+		}
 
-		return [];
+		try {
+			let dataset = await Fetch( source.url, {
+				duration: '0d'
+				,type: 'json'
+				,fetchOptions: fetchOptions
+			} );
+
+			console.log( `TOURNAMENTS: loaded ${ dataset.length } from ${ source.label } API` );
+
+			return dataset;
+		} catch ( event ) {
+			console.warn( `TOURNAMENTS: ${ source.label } API failed (${ source.url }): ${ event.message }` );
+		}
 	}
+
+	console.warn( 'TOURNAMENTS: all sources failed, returning empty fallback' );
+
+	return [];
 };

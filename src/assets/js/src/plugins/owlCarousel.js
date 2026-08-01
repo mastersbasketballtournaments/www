@@ -51,8 +51,8 @@ Globals.PLUGINS.themePluginOwlCarousel = function(context) {
       });
     };
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"],
-      ["plugin-css/plugin-owl-carousel.min.css", "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"],
+      ["owl-carousel/owl.carousel.min.js"],
+      ["plugin-css/plugin-owl-carousel.min.css", "owl-carousel/assets/owl.carousel.min.css", "animate/animate.min.css"],
       themePluginOwlCarouselInit
     );
   }

@@ -12,7 +12,7 @@ Globals.PLUGINS.themePluginHighlightJS = function(context) {
       });
     };
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"], ["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css", "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"],
+      ["highlight/highlight.min.js"], ["highlight/styles/default.min.css", "highlight/styles/github.min.css"],
       themePluginHighlightJSInit
     );
   }

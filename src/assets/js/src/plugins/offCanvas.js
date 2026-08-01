@@ -135,8 +135,8 @@ Globals.PLUGINS.themePluginOffCanvas = function(context) {
     };
     
     $document.themeLoadPlugin(
-      ["https://unpkg.com/js-offcanvas@1.2.8/dist/_js/js-offcanvas.pkgd.js"],
-      ["https://unpkg.com/js-offcanvas@1.2.8/dist/_css/prefixed/js-offcanvas.css", "plugin-css/plugin-offcanvas.min.css"],
+      ["js-offcanvas/dist/_js/js-offcanvas.pkgd.js"],
+      ["js-offcanvas/dist/_css/prefixed/js-offcanvas.css", "plugin-css/plugin-offcanvas.min.css"],
       themePluginOffCanvasInit
     );
   }

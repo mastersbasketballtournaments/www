@@ -37,7 +37,7 @@ Globals.PLUGINS.themePluginTyped = function(context) {
       });
     };
 
-    $document.themeLoadPlugin(["https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"], [], function() {
+    $document.themeLoadPlugin(["typeit/typeit.min.js"], [], function() {
       $document.includeWaypoints(function() {
         $document.isPageLoaderDone(themePluginTypedInit);
       });

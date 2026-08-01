@@ -34,7 +34,7 @@ Globals.PLUGINS.themePluginCountDown = function(context) {
           });
       });
     };
-    $document.themeLoadPlugin(["https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"], [], themePluginCountdownInit);
+    $document.themeLoadPlugin(["jquery-countdown/jquery.countdown.min.js"], [], themePluginCountdownInit);
   }
 };
 

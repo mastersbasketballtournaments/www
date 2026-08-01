@@ -48,7 +48,7 @@ Globals.PLUGINS.themePluginIsotope = function(context) {
       });
     };
     $document.themeLoadPlugin(
-      ["https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js", "https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"], [], themePluginIsotopeInit
+      ["imagesloaded/imagesloaded.pkgd.min.js", "isotope/isotope.pkgd.min.js"], [], themePluginIsotopeInit
     );
   }
 };

@@ -47,7 +47,7 @@ Globals.PLUGINS.themePluginBlazy = function(context) {
     };
 
     $document.themeLoadPlugin(
-      ["https://cdn.jsdelivr.net/blazy/latest/blazy.min.js"], ["plugin-css/plugin-blazy.min.css"],
+      ["blazy/blazy.min.js"], ["plugin-css/plugin-blazy.min.css"],
       themePluginBlazyInit
     );
   }

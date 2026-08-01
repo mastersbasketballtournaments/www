@@ -73,7 +73,7 @@ var Globals = {
     // ----------------------------------------------------------------
     includeWaypoints: function(callback) {
       if (typeof jQuery.fn.waypoint === 'undefined') {
-        $document.themeLoadPlugin(['https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js'], []);
+        $document.themeLoadPlugin(['waypoints/jquery.waypoints.min.js'], []);
         var tries = 0;
         var isWaypointsDoneTimer = setInterval(function() {
           if (typeof jQuery.fn.waypoint === 'function') {
@@ -514,7 +514,7 @@ window.utils = utils;
             );
           });
         };
-        $document.themeLoadPlugin([], ["https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"], function() {
+        $document.themeLoadPlugin([], ["animate/animate.min.css"], function() {
           $document.isPageLoaderDone(initElementsHovered);
         });
       }
@@ -630,7 +630,7 @@ window.utils = utils;
         };
 
         $document.includeWaypoints(function() {
-          $document.themeLoadPlugin([], ["https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"], function() {
+          $document.themeLoadPlugin([], ["animate/animate.min.css"], function() {
             $document.isPageLoaderDone(initElementsAnimated);
           });
         });
@@ -661,7 +661,7 @@ window.utils = utils;
         }
         if (scrollEffectIn !== null || scrollEffectOut !== null) {
           $scroll.addClass('scroll-effect');
-          $document.themeLoadPlugin([], ["https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"]);
+          $document.themeLoadPlugin([], ["animate/animate.min.css"]);
           effectType = 'animate';
         }
 
@@ -1499,7 +1499,7 @@ Globals.PLUGINS.themePluginBlazy = function(context) {
     };
 
     $document.themeLoadPlugin(
-      ["https://cdn.jsdelivr.net/blazy/latest/blazy.min.js"], ["plugin-css/plugin-blazy.min.css"],
+      ["blazy/blazy.min.js"], ["plugin-css/plugin-blazy.min.css"],
       themePluginBlazyInit
     );
   }
@@ -1565,7 +1565,7 @@ Globals.PLUGINS.themePluginBootstrapSelect = function(context) {
 
   if ($selects.length > 0) {
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/js/bootstrap-select.min.js"], ["https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/css/bootstrap-select.min.css", "plugin-css/plugin-bootstrap-select.min.css"],
+      ["bootstrap-select/js/bootstrap-select.min.js"], ["bootstrap-select/css/bootstrap-select.min.css", "plugin-css/plugin-bootstrap-select.min.css"],
       themePluginBootstrapSelectInit
     );
   }
@@ -1689,7 +1689,7 @@ Globals.PLUGINS.themePluginClipboard = function(context) {
 
   if ($clipboards.length > 0) {
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"], [],
+      ["clipboard/clipboard.min.js"], [],
       themePluginClipboardInit
     );
   }
@@ -1730,7 +1730,7 @@ Globals.PLUGINS.themePluginCountTo = function(context) {
         });
       });
     };
-    $document.themeLoadPlugin(["https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.2.0/jquery.countTo.min.js"], [], function() {
+    $document.themeLoadPlugin(["jquery-countto/jquery.countTo.min.js"], [], function() {
       $document.includeWaypoints(function() {
         $document.isPageLoaderDone(themePluginCountToInit);
       });
@@ -1776,7 +1776,7 @@ Globals.PLUGINS.themePluginCountDown = function(context) {
           });
       });
     };
-    $document.themeLoadPlugin(["https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"], [], themePluginCountdownInit);
+    $document.themeLoadPlugin(["jquery-countdown/jquery.countdown.min.js"], [], themePluginCountdownInit);
   }
 };
 
@@ -2011,7 +2011,7 @@ Globals.PLUGINS.themePluginCubePortfolio = function(context) {
 
   if ($cubePortfolios.length > 0) {
     $document.themeLoadPlugin(
-      ["https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js", "cubeportfolio-jquery-plugin/cubeportfolio/js/jquery.cubeportfolio.min.js"], ["plugin-css/plugin-magnific-popup.min.css", "plugin-css/plugin-cube-portfolio.min.css", "cubeportfolio-jquery-plugin/cubeportfolio/css/cubeportfolio.min.css"],
+      ["imagesloaded/imagesloaded.pkgd.min.js", "cubeportfolio-jquery-plugin/cubeportfolio/js/jquery.cubeportfolio.min.js"], ["plugin-css/plugin-magnific-popup.min.css", "plugin-css/plugin-cube-portfolio.min.css", "cubeportfolio-jquery-plugin/cubeportfolio/css/cubeportfolio.min.css"],
       themePluginCubePortfolioInit
     );
   }
@@ -2269,7 +2269,7 @@ Globals.PLUGINS.themePluginFixTo = function(context) {
       });
     };
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/fixto/0.5.0/fixto.js"], ["plugin-css/plugin-sticky-classes.min.css"],
+      ["fixto/fixto.js"], ["plugin-css/plugin-sticky-classes.min.css"],
       themePluginFixToInit
     );
   }
@@ -2395,7 +2395,7 @@ Globals.PLUGINS.themePluginHighlightJS = function(context) {
       });
     };
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"], ["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css", "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"],
+      ["highlight/highlight.min.js"], ["highlight/styles/default.min.css", "highlight/styles/github.min.css"],
       themePluginHighlightJSInit
     );
   }
@@ -2453,106 +2453,7 @@ Globals.PLUGINS.themePluginIsotope = function(context) {
       });
     };
     $document.themeLoadPlugin(
-      ["https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js", "https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"], [], themePluginIsotopeInit
-    );
-  }
-};
-
-
-
-// Object of plugins to add to Globals.PLUGINS
-Globals.PLUGINS.themePluginMagnificPopup = function(context) {
-  // ----------------------------------------------------------------
-  // Plugin: MagnificPopup (popup content)
-  // @see: http://dimsemenov.com/plugins/magnific-popup/
-  // ----------------------------------------------------------------
-  var $magnificPopups = context.find('[data-toggle="magnific-popup"]');
-  if ($magnificPopups.length > 0) {
-    var themePluginMagnificPopupInit = function() {
-      var magnificPopupSettingsDefault = {
-        disableOn: 0,
-        key: null,
-        midClick: false,
-        mainClass: 'mfp-fade-zoom',
-        preloader: true,
-        focus: '', // CSS selector of input to focus after popup is opened
-        closeOnContentClick: false,
-        closeOnBgClick: true,
-        closeBtnInside: true,
-        showCloseBtn: true,
-        enableEscapeKey: true,
-        modal: false,
-        alignTop: false,
-        removalDelay: 300,
-        prependTo: null,
-        fixedContentPos: 'auto',
-        fixedBgPos: 'auto',
-        overflowY: 'auto',
-        closeMarkup: '<button title="%title%" type="button" class="mfp-close">&times;</button>',
-        tClose: 'Close (Esc)',
-        tLoading: 'Loading...',
-        type: 'image',
-        image: {
-          titleSrc: 'data-title',
-          verticalFit: true
-        }
-      };
-
-      $magnificPopups.each(function() {
-        var magnificPopupSettings;
-        var magnificPopupSettingsExtras = {};
-        var $this = $(this);
-        var magnificPopupItems = $this.data('magnific-popup-items') || null;
-
-        if ($this.data('magnific-popup-settings') !== '') {
-          magnificPopupSettingsExtras = $this.data('magnific-popup-settings');
-        }
-        magnificPopupSettings = jQuery.extend(magnificPopupSettingsDefault, magnificPopupSettingsExtras);
-
-        // Pass items on a single item ie. a "View Gallery" button
-        if (magnificPopupItems !== null) {
-          var items = [];
-          $.each(magnificPopupItems.split(','), function(k, img) {
-            items.push({
-              "src": img
-            });
-          });
-          magnificPopupSettings.items = items;
-          magnificPopupSettings.gallery.enabled = true;
-          magnificPopupSettings.type = 'image';
-          magnificPopupSettings.delegate = null;
-        }
-
-        $this.magnificPopup(magnificPopupSettings);
-
-        // Transitions
-        var mfpImgLoadedClass = 'mfp-image-in';
-        $this.on('mfpOpen', function(e /*, params */ ) {
-          $.magnificPopup.instance.next = function() {
-            var self = this;
-            self.wrap.removeClass(mfpImgLoadedClass);
-            setTimeout(function() {
-              $.magnificPopup.proto.next.call(self);
-            }, 120);
-          };
-          $.magnificPopup.instance.prev = function() {
-            var self = this;
-            self.wrap.removeClass(mfpImgLoadedClass);
-            setTimeout(function() {
-              $.magnificPopup.proto.prev.call(self);
-            }, 120);
-          };
-        }).on('mfpImageLoadComplete', function() {
-          var $that = $.magnificPopup.instance;
-          setTimeout(function() {
-            $that.wrap.addClass(mfpImgLoadedClass);
-          }, 10);
-        });
-      });
-    };
-    $document.themeLoadPlugin(
-      ["magnific-popup/dist/jquery.magnific-popup.min.js"], ["plugin-css/plugin-magnific-popup.min.css", "magnific-popup/dist/magnific-popup.css"],
-      themePluginMagnificPopupInit
+      ["imagesloaded/imagesloaded.pkgd.min.js", "isotope/isotope.pkgd.min.js"], [], themePluginIsotopeInit
     );
   }
 };
@@ -2578,7 +2479,7 @@ Globals.PLUGINS.themePluginNiceScroll = function(context) {
     };
 
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"], [],
+      ["jquery-nicescroll/jquery.nicescroll.min.js"], [],
       themePluginCustomScrollbarInit
     );
   }
@@ -2720,7 +2621,7 @@ Globals.PLUGINS.themePluginOffCanvas = function(context) {
     };
 
     $document.themeLoadPlugin(
-      ["https://unpkg.com/js-offcanvas@1.2.8/dist/_js/js-offcanvas.pkgd.js"], ["https://unpkg.com/js-offcanvas@1.2.8/dist/_css/prefixed/js-offcanvas.css", "plugin-css/plugin-offcanvas.min.css"],
+      ["js-offcanvas/dist/_js/js-offcanvas.pkgd.js"], ["js-offcanvas/dist/_css/prefixed/js-offcanvas.css", "plugin-css/plugin-offcanvas.min.css"],
       themePluginOffCanvasInit
     );
   }
@@ -2781,7 +2682,7 @@ Globals.PLUGINS.themePluginOwlCarousel = function(context) {
       });
     };
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"], ["plugin-css/plugin-owl-carousel.min.css", "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"],
+      ["owl-carousel/owl.carousel.min.js"], ["plugin-css/plugin-owl-carousel.min.css", "owl-carousel/assets/owl.carousel.min.css", "animate/animate.min.css"],
       themePluginOwlCarouselInit
     );
   }
@@ -2923,7 +2824,7 @@ Globals.PLUGINS.themePluginTyped = function(context) {
       });
     };
 
-    $document.themeLoadPlugin(["https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"], [], function() {
+    $document.themeLoadPlugin(["typeit/typeit.min.js"], [], function() {
       $document.includeWaypoints(function() {
         $document.isPageLoaderDone(themePluginTypedInit);
       });
@@ -2956,7 +2857,7 @@ Globals.PLUGINS.themePluginVide = function(context) {
         }
       });
     };
-    $document.themeLoadPlugin(['https://cdnjs.cloudflare.com/ajax/libs/vide/0.5.1/jquery.vide.min.js'], [], themePluginVideInit);
+    $document.themeLoadPlugin(['vide/jquery.vide.min.js'], [], themePluginVideInit);
   }
 };
 
@@ -2982,7 +2883,7 @@ Globals.PLUGINS.themePluginZoom = function(context) {
       });
     };
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.20/jquery.zoom.min.js"], [], themePluginZoomInit);
+      ["jquery-zoom/jquery.zoom.min.js"], [], themePluginZoomInit);
   }
 };
 

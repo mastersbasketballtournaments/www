@@ -21,7 +21,7 @@ Globals.PLUGINS.themePluginVide = function(context) {
         }
       });
     };
-    $document.themeLoadPlugin(['https://cdnjs.cloudflare.com/ajax/libs/vide/0.5.1/jquery.vide.min.js'], [], themePluginVideInit);
+    $document.themeLoadPlugin(['vide/jquery.vide.min.js'], [], themePluginVideInit);
   }
 };
 

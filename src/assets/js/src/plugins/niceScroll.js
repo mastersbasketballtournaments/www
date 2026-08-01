@@ -17,7 +17,7 @@ Globals.PLUGINS.themePluginNiceScroll = function(context) {
     };
 
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"], [],
+      ["jquery-nicescroll/jquery.nicescroll.min.js"], [],
       themePluginCustomScrollbarInit
     );
   }

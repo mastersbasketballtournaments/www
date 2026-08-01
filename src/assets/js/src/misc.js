@@ -54,7 +54,7 @@
             );
           });
         };
-        $document.themeLoadPlugin([], ["https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"], function() {
+        $document.themeLoadPlugin([], ["animate/animate.min.css"], function() {
           $document.isPageLoaderDone(initElementsHovered);
         });
       }
@@ -170,7 +170,7 @@
         };
 
         $document.includeWaypoints(function() {
-          $document.themeLoadPlugin([], ["https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"], function() {
+          $document.themeLoadPlugin([], ["animate/animate.min.css"], function() {
             $document.isPageLoaderDone(initElementsAnimated);
           });
         });
@@ -201,7 +201,7 @@
         }
         if (scrollEffectIn !== null || scrollEffectOut !== null) {
           $scroll.addClass('scroll-effect');
-          $document.themeLoadPlugin([], ["https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"]);
+          $document.themeLoadPlugin([], ["animate/animate.min.css"]);
           effectType = 'animate';
         }
 

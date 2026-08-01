@@ -31,7 +31,7 @@ Globals.PLUGINS.themePluginCountTo = function(context) {
         });
       });
     };
-    $document.themeLoadPlugin(["https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.2.0/jquery.countTo.min.js"], [], function() {
+    $document.themeLoadPlugin(["jquery-countto/jquery.countTo.min.js"], [], function() {
       $document.includeWaypoints(function() {
         $document.isPageLoaderDone(themePluginCountToInit);
       });

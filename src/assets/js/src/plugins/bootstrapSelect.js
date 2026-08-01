@@ -58,8 +58,8 @@ Globals.PLUGINS.themePluginBootstrapSelect = function(context) {
   
   if ($selects.length > 0) {
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/js/bootstrap-select.min.js"],
-      ["https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/css/bootstrap-select.min.css", "plugin-css/plugin-bootstrap-select.min.css"],
+      ["bootstrap-select/js/bootstrap-select.min.js"],
+      ["bootstrap-select/css/bootstrap-select.min.css", "plugin-css/plugin-bootstrap-select.min.css"],
       themePluginBootstrapSelectInit
     );
   }

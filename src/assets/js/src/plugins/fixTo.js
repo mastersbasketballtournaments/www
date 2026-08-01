@@ -177,7 +177,7 @@ Globals.PLUGINS.themePluginFixTo = function(context) {
       });
     };
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/fixto/0.5.0/fixto.js"],
+      ["fixto/fixto.js"],
       ["plugin-css/plugin-sticky-classes.min.css"],
       themePluginFixToInit
     );

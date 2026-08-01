@@ -18,7 +18,7 @@ Globals.PLUGINS.themePluginZoom = function(context) {
       });
     };
     $document.themeLoadPlugin(
-      ["https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.20/jquery.zoom.min.js"], [], themePluginZoomInit);
+      ["jquery-zoom/jquery.zoom.min.js"], [], themePluginZoomInit);
   }
 };
 

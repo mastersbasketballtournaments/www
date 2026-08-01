@@ -228,7 +228,7 @@ Globals.PLUGINS.themePluginCubePortfolio = function(context) {
   
   if ($cubePortfolios.length > 0) {
     $document.themeLoadPlugin(
-      ["https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js", "cubeportfolio-jquery-plugin/cubeportfolio/js/jquery.cubeportfolio.min.js"],
+      ["imagesloaded/imagesloaded.pkgd.min.js", "cubeportfolio-jquery-plugin/cubeportfolio/js/jquery.cubeportfolio.min.js"],
       ["plugin-css/plugin-magnific-popup.min.css", "plugin-css/plugin-cube-portfolio.min.css", "cubeportfolio-jquery-plugin/cubeportfolio/css/cubeportfolio.min.css"],
       themePluginCubePortfolioInit
     );
