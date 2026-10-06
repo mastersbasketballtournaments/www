@@ -2,10 +2,10 @@ import 'dotenv/config';
 import Fetch from '@11ty/eleventy-fetch';
 
 export default async function fetchApi( path ) {
-	let urls = [ `https://admin.mastersbasketballtournaments.com/api/${ path }/` ];
+	let urls = [ `https://cms.mastersbasketballtournaments.com/api/${ path }` ];
 
 	if ( process.env.ELEVENTY_ENV == 'development' ) {
-		urls.unshift( `http://localhost:5173/api/${ path }/` );
+		urls.unshift( `http://localhost:5173/api/${ path }` );
 	}
 
 	for ( const url of urls ) {
