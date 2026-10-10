@@ -2,7 +2,7 @@
 import fetch from 'node-fetch';
 import { schedule } from '@netlify/functions';
 
-const BUILD_HOOK = 'https://api.netlify.com/build_hooks/68244410651fbd3cd691548f'
+const BUILD_HOOK = 'https://api.netlify.com/build_hooks/6acaa80bbcb18ecf82c62109'
 
 // Schedules the handler function to run daily at 02:37
 const handler = schedule( '37 2 * * *', async () => {
