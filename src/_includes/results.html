@@ -31,9 +31,8 @@
 						</h3>
 						<a href="/tournament-update/{{ tournament.name | slugify }}" class="text-sm font-semibold text-brand-100 hover:text-white transition-colors">Suggest an Update</a>
 					</div>
-					<div class="px-6 py-5 grid grid-cols-[1fr_auto] gap-6 sm:grid-cols-3">
-						<div class="grid gap-6 content-start sm:contents">
-						<div>
+					<div class="px-6 py-5 grid gap-6 sm:grid-cols-3">
+						<div class="wrap-anywhere">
 							<h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Details</h4>
 							<p class="mb-1"><strong>When:</strong> {{ tournament.dateStart }} to {{ tournament.dateEnd }}</p>
 							<p class="mb-1"><strong>Contact:</strong> <a href="mailto:{{ tournament.emailAddress }}?subject=Enquiry via MastersBasketballTournaments.com" class="text-brand-600 hover:text-brand-500 underline">{%- if tournament.contact == '' -%}{{ tournament.emailAddress }}{% else %}{{ tournament.contact }}{% endif %}</a></p>
@@ -49,17 +48,16 @@
 								{%- endif %}
 							</div>
 						</div>
-						<div class="sm:justify-self-center">
+						<div class="wrap-anywhere sm:justify-self-center">
 							<h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Location</h4>
 							<p class="mb-1"><strong>City:</strong> {{ tournament.location }}</p>
 							<p class="mb-1"><strong>Country:</strong> {{ tournament.country }}</p>
 							<p class="mb-1"><strong>Continent:</strong> {{ tournament.continent }}</p>
 						</div>
-						</div>
 						{%- if tournament.competitions.size > 0 -%}
-							<div class="justify-self-end">
+							<div class="sm:justify-self-end">
 								<h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Competitions</h4>
-								<div class="grid sm:grid-cols-[auto_auto] sm:justify-start gap-x-6 gap-y-4">
+								<div class="grid grid-cols-[auto_auto] justify-start gap-x-6 gap-y-4">
 									<div>
 										{%- assign competitions = tournament.competitions | where: 'gender', 'Men' | sort: 'ageOver' -%}
 										{%- if competitions.size > 0 -%}
