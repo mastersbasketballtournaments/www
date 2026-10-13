@@ -46,6 +46,9 @@
 								{%- if tournament.instagram != '' %}
 									<a href="{{ tournament.instagram }}" target="_blank" class="hover:text-brand-600 transition-colors">{% include 'icons/instagram.svg' %}<span class="sr-only">Instagram</span></a>
 								{%- endif %}
+								{%- if tournament.tiktok != blank %}
+									<a href="{{ tournament.tiktok }}" target="_blank" class="hover:text-brand-600 transition-colors">{% include 'icons/tiktok.svg' %}<span class="sr-only">TikTok</span></a>
+								{%- endif %}
 							</div>
 						</div>
 						<div class="wrap-anywhere sm:justify-self-center">
